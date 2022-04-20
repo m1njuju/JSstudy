@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클로저</title>
+</head>
+<body>
+    <p>Counting with a local variable.</p>
+    <button type="button" onclick="myFunction1()">Count!</button>
+    <p id="demo">0</p>
+    <script>
+        function add() {
+            let counter = 0;//지역변수이기때문에 카운터가 1에서 증가하지 않음
+            return counter +=1;
+        }
+        function myFunction() {
+            document.getElementById("demo").innerHTML = add();
+        }
+        //중첩함수
+        document.getElementById("demo").innerHTML = add2();
+        function add2() {//부모함수
+            let counter=0;
+            function plus() { counter +=1;}//자식함수
+            plus();
+            return counter;
+        }
+        //자바스크립트 클로저(Closures)
+        let add3 = (function () {//중첩함수(부모함수)
+            let counter =0;
+            return function () { return counter +=1;}//자식함수입장에서 counter는 전역변수
+        }) ();
+        function myFunction1() {
+            document.getElementById("demo").innerHTML = add3();
+        }
+    </script>
+</body>
+</html>

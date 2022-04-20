@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .democlass {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="frm1">
+        First name: <input type="text" name="fname" value="Donald"><br>
+        Last name: <input type="text" name="lname" value="Duck"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <p>Click "Try it" to display the value of each element in the form.</p>
+    <button onclick="myFunction()">Try it</button>
+    <p id="demo"></p>
+
+    <p id="p1">Hello World!</p>
+
+    <p id="id01">Old Data......</p>
+
+    <h1>Hello World</h1>
+    <p id="myH1"> Good javascript..!</p>
+    <button onclick="myFunction2()">Try it</button><br>
+    <script>
+        function myFunction() {
+            let x = document.getElementById("frm1");
+            let text = "";
+            let i;
+            for(i=0; i< x.length; i++) {
+                text += x.elements[i].value + "<br>";
+            }
+            document.getElementById("demo").innerHTML = text;
+        }
+
+        document.write(Date());
+
+        document.getElementById("p1").innerHTML = "New text!";
+
+        x = document.getElementById("id01");
+        x.innerHTML = "New Data....";
+
+        function myFunction2() {
+            document.getElementsByTagName("h1")[0].setAttribute("class","democlass");
+            document.getElementById("myH1").style.color = "blue";
+        }
+    </script>
+    <p>The paragraph above was changed by a script.</p>
+</body>
+</html>

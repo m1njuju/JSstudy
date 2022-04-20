@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>---Generator Random Number and Search of Random Number---</h2>
+    <form>
+        첫 번째 수 : <input id="first">
+        두 번째 수 : <input id="second">
+        세 번째 수 : <input id="third">
+        네 번째 수 : <input id="forth">
+        <button type="button" onclick="createNumber()">Create</button>
+        <button type="button" onclick="searchNumber()">Search</button><br>
+        Strike : <input id="strike">
+        Ball : <input id="ball">
+        카운터(반복 수) : <input id="count">
+    </form>
+    <script>
+        let array_Num = new Array();
+        let strike_cnt = 0;
+        let ball_cnt=0;
+        let count=0;
+        let text="";
+        function createNumber() {
+            for (let i=0; i<=3; i++){
+                first = Math.floor((Math.random())*10);
+                array_Num[i] = first;
+                for (let j=0; j<i; j++) {
+                    if(array_Num[j]==array_Num[i]) {
+                        i--;
+                        break;
+                    }
+                }
+            }
+            document.getElementById("first").innerHTML = array_Num[0];
+            document.getElementById("second").innerHTML = array_Num[1];
+            document.getElementById("third").innerHTML = array_Num[2];
+            document.getElementById("forth").innerHTML = array_Num[3];
+        }
+        function searchNumber() {
+            strike_cnt =0;
+            ball_cnt=0;
+            input_first=document.getElementById("first").value;
+            input_second=document.getElementById("second").value;
+            input_third=document.getElementById("third").value;
+            input_forth=document.getElementById("forth").value;
+            let input_Num = new Array(input_first,input_second,input_third,input_forth);
+            for(let i=0; i <=3; i++) {
+                for(let j=0; j<=3; j++) {
+                    if(input_Num[i] == array_Num[j] && i==j){
+                        strike_cnt++;
+                    }
+                    else if (input_Num[i] == array_Num[j]) {
+                        ball_cnt++;
+                    }
+                }
+                count++;
+                document.getElementById("strike").value = strike_cnt;
+                document.getElementById("ball").value = ball_cnt;
+                document.getElementById("count").value = count;
+                text +="입력"+count+" : " + input_Num+" Strike : "+strike_cnt+" Ball: "+
+                ball_cnt+"<br>";
+                document.getElementById("demo01").innerHTML=text;
+                if(count==4) {
+                    document.getElementById("demo02").innerHTML = "축하합니다";
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>

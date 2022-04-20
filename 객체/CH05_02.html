@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 정의 객체</title>
+</head>
+<body>
+    <script>
+        //리터럴 객체 정의
+        let star = {
+            max_diameter: 30,
+            min_diameter: 10,
+            max_radius: function () {
+                let max_x=this.max_diameter/2;
+                return max_x;
+            },
+            min_radius: function() {
+                let min_x=this.min_diameter/2;
+                return min_x;
+            }
+        };
+        star.color='blue';
+        document.write("별의 색상: "+star.color+"<br>");
+        document.write("별의 바깥 둘레: "+star.max_diameter+"<br>");
+        document.write("별의 바깥 둘레 반지름: "+star.max_radius()+"<br>");
+        document.write("별의 안쪽 둘레: "+star.min_diameter+"<br>");
+        document.write("별의 안쪽 둘레 반지름: "+star.min_radius()+"<br>");
+
+        //new Object()와 함수를 이용한 객체 정의
+        let myCar = new Object();
+        myCar.type = 'BMW';
+        myCar.color = 'black';
+        myCar.speed = 100;
+        myCar.bbreak = function() {
+            this.speed -=10;
+            return this.speed;
+        };
+        myCar.accel = function() {
+            this.speed +=10;
+            return this.speed;
+        };
+        document.write("myCar: "+myCar.type+" 색상: "+myCar.color+" 속력: "+myCar.accel()+"<br>");
+
+        //생성자 함수를 이용한 객체 정의
+        function Car(model,speed,color) {
+            this.model = model;
+            this.speed = speed;
+            this.color = color;
+            this.bbreak = function() {
+                this.speed -=10;
+            };
+            this.accel = function() {
+                this.speed +=10;
+            };
+        }
+        myCar =new Car("BMW",100,"black");
+        yourCar = new Car("Benz",150,"Gray");
+        document.write("내 차의 모델: "+myCar.model +" 속도: "+myCar.speed
+                        +" 색상: "+myCar.color+"<br>");
+        yourCar.accel();
+        document.write("당신 차의 모델: "+yourCar.model +" 속도: "+yourCar.speed
+                        +" 색상: "+yourCar.color+"<br>");
+        //객체 멤버 접근하기
+        //기존 객체에 객체 멤버 삽입하기
+        myCar.blackbox = true; //생성자 속성이나 메서드의 변경이 아닌 myCar의 멤버 변경
+        myCar.battery = 1200;
+        myCar.display = function() {
+            //alert("myCar의 배터리 양: "+ this.battery);
+        }
+        myCar.display();
+        document.write("내 차의 블랙박스: "+myCar.blackbox+" 배터리: "+myCar.battery+"<br>");
+        //객체의 멤버 삭제
+        //delete myCar.color;
+        document.write("내 차의 색상: "+myCar.color);
+        //객체에 적용하는 for in 문
+        for(let i in myCar) {//i값이 키 값이 되어 배열에 접근하듯 속성과 메서드 출력
+            document.write("<br>"+i+" : "+myCar[i]+"<br>");
+        }
+    </script>
+</body>
+</html>

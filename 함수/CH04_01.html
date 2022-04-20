@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript Functions</h2>
+    <p>JavaScript has an built-in function construtor.</p>
+    <p>Function can be used in expressions.</p>
+    <p>The function have methods and properties.</p>
+    <script>
+        //함수 선언
+        function myFunction(a,b) {
+            return a*b;
+        }
+        document.write(myFunction(4,3));
+
+        //Function() 생성자
+        let myFunction2 = new Function("a","b","return a*b");
+        document.write("<br>"+myFunction2(4,3));
+        //함수 값
+        let x = myFunction(4,3) *2;
+        document.write("<br>"+x);
+
+        //함수는 객체이다
+        function myFunction3(a,b){
+            return arguments.length; // 함수가 호출될 때 받은 인수의 개수를 반환
+        }
+        function yourFunction(a,b) {
+            return a*b;
+        }
+        document.write("<br>"+typeof(myFunction3)+"<br>");
+        document.write(myFunction3(4,3)+"<br>");
+        document.write(yourFunction.toString());
+    </script>
+</body>
+</html>

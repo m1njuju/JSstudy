@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 객체 찾기</title>
+</head>
+<body>
+    <a name="html">HTML Tutorial</a><br>
+    <a name="css">CSS Tutorial</a><br>
+    <a name="xml">XML Tutorial</a><br>
+    <button onclick="myFunction()">Try it</button>
+    <p id="demo01"></p>
+    <p id="demo02"></p><br>
+
+    <p> the HTML content of the document.</p>
+    <button onclick="myFunction2()">Try it</button>
+    <p id="demo03"></p>
+
+    <p>To change the HTML content of the document.</p>
+    <button onclick="myFunction3()">Try it</button><br>
+
+    <button onclick="myFunction4()">Try it</button>
+    <script>
+        function myFunction() {
+            let x = document.anchors.length;// anchors는 name 특성이 있는 문서의 모든 a요소 모음 반환
+            document.getElementById("demo01").innerHTML = "anchors.length= "+x;
+            let y = document.anchors[0].innerHTML
+            document.getElementById("demo02").innerHTML = "anchors[0].innerHTML= "+y;
+        }
+
+        function myFunction2() {
+            let x= document.body.innerHTML;// body요소를 반환
+            document.getElementById("demo03").innerHTML = x;
+        }
+
+        function myFunction3() {
+            document.body.innerHTML = "Some new HTML content";
+        }
+
+        function myFunction4() {
+            document.body.style.backgroundColor = "yellow";
+        }
+    </script>
+</body>
+</html>

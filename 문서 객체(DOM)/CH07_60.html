@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form 객체</title>
+</head>
+<body>
+    <!--<form id="myForm" name="form1">
+        First name: <input type="text" name="fname" value="Donald"><br>
+        Last name: <input type="text" name="lname" value="Duck"><br>
+    </form>
+    <p>Change the value of the name attribute in the form element.</p>
+    <button onclick="myFunction()">Try it</button>
+    <p id="demo"></p>
+
+    <p>Enter some text in the fields below, reset the form.</p>
+    <form id="myForm" name="form1">
+        First name: <input type="text" name="fname"><br>
+        Last name: <input type="text" name="lname"><br><br>
+        <input type="button" onclick="myFunction2()" value="Reset form">
+    </form>
+    <form id="myForm" action="action_page.php">
+        First name: <input type="text" name="fname" value="Donald"><br>
+        Last name: <input type="text" name="lname" value="Duck"><br>
+    </form>
+    <p>Display the value of the first element in the form.</p>
+    <button onclick="firstFunction()">First try it</button>
+    <button onclick="secondFunction()">Second try it</button>
+    <button onclick="thirdFunction()">third try it</button>
+    <p id="demo01"></p>
+    <p id="demo02"></p>
+    <p id="demo03"></p>
+
+    <form id="myCarForm" action="/action_page.php">
+        Favorite Car: <input type="text" name="fname" value="Volvo">
+    </form>
+    <form id="myColorForm">
+        Favorite Colo: <input type="text" name="favcolor" value="Blue">
+    </form>
+    <p>Display the id of the first form element(index 0).</p>
+    <button onclick="myFunction3()">Try it</button>
+    <p id="demo"></p>-->
+
+    <form id="myForm" action="action_page.php">
+        First name: <input type="text" name="fname" value="Donald"><br>
+        Last name: <input type="text" name="lname" value="Duck"><br>
+    </form>
+    <p>Display the value of the first element in the form.</p>
+    <button onclick="firstFunction2()">First try it</button>
+    <p id="demo01"></p>
+    <script>
+        function myFunction() {
+            document.getElementById("myForm").name = "newName";
+            let x = document.getElementById("myForm").name;
+            document.getElementById("demo").innerHTML = x;
+        }
+
+        function myFunction2() {
+            document.getElementById("myForm").reset();
+        }
+
+        function firstFunction() {
+            let x = document.getElementById("myForm").elements[0].value;
+            document.getElementById("demo01").innerHTML = x;
+        }
+        function secondFunction() {
+            let x = document.getElementById("myForm").elements.item(0).value;
+            document.getElementById("demo02").innerHTML = x;
+        }
+        function thirdFunction() {
+            let x = document.getElementById("myForm").elements.namedItem("fname").value;
+            document.getElementById("demo03").innerHTML = x;
+        }
+
+        function myFunction3() {
+            let x = document.forms[0].id;
+            document.getElementById("demo").innerHTML = x;
+        }
+
+        function firstFunction2() {
+            let x = document.getElementById("myForm");
+            let txt = "";
+            let i;
+            for ( i=0; i<x.length; i++) {
+                txt = txt + x.elements[i].value + "<br>";
+            }
+            document.getElementById("demo01").innerHTML = txt;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--innerHTML 사용하기-->
+    <h2>My First Web Page</h2>
+    <p>My First Paragraph.</p>
+    <button type="button" onclick="document.write('Second Example...')"> Try it </button>
+    <p id="demo"></p>
+    <script>
+        document.getElementById("demo").innerHTML = "Hello JavaScript...";
+
+        //document.write()
+        let name="hongGilDong";
+        let age=35;
+        document.write("name = ", name, " age = ", age, "<br>");
+        document.write("name = "+ name+ " age = ", age+ "<br>");
+        document.write("First Example...");
+
+        //prompt()
+        let age1= prompt("나이를 입력하시오","숫자를 입력하시오");
+        document.write(age1);
+    </script>
+</body>
+</html>

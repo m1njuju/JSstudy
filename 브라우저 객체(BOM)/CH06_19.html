@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location 객체</title>
+</head>
+<body>
+    <p>Display the entire URL of the current page.</p>
+    <p id="demo"></p>
+
+    <p>Display the protocol portion of the current URL.</p>
+    <p id="demo2"></p>
+
+    <input type="button" value="Load new document" onclick="newDoc()">
+
+    <input type="button" value="Back" onclick="goBack()">
+    <input type="button" value="Forward" onclick="goForward()">
+    <script>
+        document.getElementById("demo").innerHTML = 
+            "Page location is " + window.location.href + "<br>" +
+            "Page hostname is " + window.location.hostname + "<br>" +
+            "Page path is " + window.location.pathname;
+
+        document.getElementById("demo2").innerHTML = 
+            "Page protocol is: " +window.location.protocol;
+
+        function newDoc() {
+            window.location.assign("https://www.naver.com");
+        }
+
+        //history 객체
+        function goBack() {
+            window.history.back();
+        }
+        function goForward() {
+            window.history.forward();
+        }
+    </script>
+</body>
+</html>

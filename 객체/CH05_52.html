@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정규표현식(RegExp) 객체</title>
+</head>
+<body>
+    <p>Search and Replace method in RegExp</p>
+
+    <p>The best program is javaScript...!</p>
+
+    <p>The best program is javaScript and HTML5</p>
+    <script>
+        //String 객체의 메서드 사용
+        let str = "Hello JavaScript Program...!"
+        let regexp_search = str.search(/javascript/i);//일치 항목을 검색, 일치 항목의 위치 반환
+        document.write(regexp_search+"<br>");
+        let string_search = str.search("javascript");
+        document.write(string_search+"<br>");
+        let regexp_replace = str.replace(/javascript/i, "HTML5");//수정된 문자열을 반환
+        document.write(regexp_replace+"<br>");
+        let string_replace = str.replace("javascript","HTML5");
+        document.write(string_replace+"<br><br>");
+
+        //test(), exec(), match() 메서드
+        str = "The best program is javaScript...!"
+        let ptn = /javaScript/;
+        document.write(ptn.test(str)+"<br>");//true/false 반환
+        document.write(ptn.exec(str)+"<br>");//발견된 텍스트 반환, 존재X null값 반환
+        document.write(str.match(ptn)+"<br><br>");//String객체의 메서드
+
+        //정규표현식 플래그
+        str = "The best program is \n javaScript...!";
+        let ptn01 = /javascript/i;
+        document.write(str.match(ptn01)+"<br>");
+        let ptn02 = /javaScript/g;
+        document.write(str.match(ptn02)+"<br>");
+        let ptn03 = /javaScript/m;
+        document.write(str.match(ptn03)+"<br><br>");
+
+        //정규식 패턴
+        str = "The best program is javaScript and HTML5";
+        ptn01 = /javascript/ig;
+        document.write(str.match(ptn01)+"<br>");
+        ptn02 = /[prjava]/ig;
+        document.write(str.match(ptn02)+"<br>");
+        ptn03 = /[A-K]/ig;
+        document.write(str.match(ptn03)+"<br>");
+        ptn04 = /[0-9]/ig;
+        document.write(str.match(ptn04)+"<br>");
+        ptn05 = /p|x|z/ig;
+        document.write(str.match(ptn05)+"<br><br>");
+
+        //메타 문자
+        str = "The best program is javaScript and HTML5!";
+        ptn01 = /^j/ig;
+        document.write("<b>1. </b>"+str.match(ptn01)+"<br>");
+        ptn02 = /!$/ig;
+        document.write("<b>2. </b>"+str.match(ptn02)+"<br>");
+        ptn03 = /\w/ig;
+        document.write("<b>3. </b>"+str.match(ptn03)+"<br>");
+        ptn04 = /\W/ig;
+        document.write("<b>4. </b>"+str.match(ptn04)+"<br>");
+        ptn05 = /\d/ig;
+        document.write("<b>5. </b>"+str.match(ptn05)+"<br>");
+        ptn06 = /\D/ig;
+        document.write("<b>5. </b>"+str.match(ptn06)+"<br>");
+        ptn07 = /\s/ig;
+        document.write("<b>5. </b>"+str.match(ptn07)+"<br>");
+        ptn08 = /\S/ig;
+        document.write("<b>5. </b>"+str.match(ptn08)+"<br><br>");
+
+        //수량 한정자
+        let str01 = "ab";
+        let str02 = "abc";
+        let str03 = "abccc";
+        ptn01 = /abc+/ig;
+        document.write("<b>1. ab : </b>"+str01.match(ptn01)+"<br>");
+        document.write("<b>2. abc : </b>"+str02.match(ptn01)+"<br>");
+        document.write("<b>3. abccc : </b>"+str03.match(ptn01)+"<br><br>");
+        ptn02 = /abc*/ig;
+        document.write("<b>1. ab : </b>"+str01.match(ptn02)+"<br>");
+        document.write("<b>2. abc : </b>"+str02.match(ptn02)+"<br>");
+        document.write("<b>3. abccc : </b>"+str03.match(ptn02)+"<br><br>");
+        ptn03 = /abc?/ig;
+        document.write("<b>1. ab : </b>"+str01.match(ptn03)+"<br>");
+        document.write("<b>2. abc : </b>"+str02.match(ptn03)+"<br>");
+        document.write("<b>3. abccc : </b>"+str03.match(ptn03)+"<br><br>");
+
+        //정규표현식의 활용
+        function ju_search() {
+            let x = calculator.number1.value;
+            let patn01 = /\d{6}-[12]\d{6}/;
+            if (patn01.test(x)) {
+                document.getElementById("demo").innerHTML = patn01.exec(x);
+            }
+        }
+    </script>
+    <form name="calculator">
+        주민등록번호 : <input type="text" name="number1" size="14">
+    </form>
+    <button onclick="ju_search()"> 검색 </button>
+    <p id="demo"></p>
+</body>
+</html>

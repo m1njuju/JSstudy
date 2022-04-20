@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //'undefined'된 매개변수에 함수 내에서 값을 할당하는 경우
+        function print(fruit,count) {
+            if(count == undefined){
+                count=10;
+                document.write(fruit+"가 "+count+"개 있습니다<br>");
+            }
+        }
+        //초과된 인수의 활용(argument 객체)
+        function print2() {
+            document.write(arguments[0]+"가 "+arguments[1]+"개 있습니다<br>");
+        }
+
+        //인수들의 합 구하기
+        function add() {
+            let len=arguments.length;
+            if(len < 2) {
+                document.write("두개 이상의 숫자를 입력하세요");
+            }
+            else {
+                let sum =0;
+                for (let idx in arguments) {
+                    sum = sum+arguments[idx];
+                }
+                return sum;
+            }
+        }
+        //인수에는 객체,배열도 가능
+        function showMe(a,b) {
+            document.write(a[0]+"가 "+a[1]+"개 있습니다<br>");
+            document.write("나는 "+b.car+"를 타고, 색상이 "+b.color+"이다<br>");
+        }
+    </script>
+</head>
+<body>
+    <script>
+        let array=['사과',10];
+        let obj={'car':'BMW', 'color':'black'};
+        showMe(array,obj);
+
+        print('사과');
+        print2('사과',10);
+
+        document.write('add() 결과= '+add()+'<br>');
+        document.write('add(100) 결과= '+add(100)+'<br>');
+        document.write('add(100,200) 결과= '+add(100,200)+'<br>');
+        document.write('add(100,200,300,400,50) 결과= '+add(100,200,300,400,50)+'<br>');
+
+        //인수 중 가장 큰 값과 인수의 합 구하기
+        function findMax() {
+            let i;
+            let max = -Infinity;
+            for (i=0; i<arguments.length; i++) {
+                if(arguments[i] > max){
+                    max = arguments[i];
+                }
+            }
+            return max;
+        }
+        function sumAll() {
+            let i, sum = 0;
+            for (i=0; i<arguments.length; i++) {
+                sum += arguments[i];
+            }
+            return sum;
+        }
+        document.write("인수의 최대값 : "+findMax(1,123,500,115,44,88)+"<br>");
+        document.write("인수의 합 : "+sumAll(1,123,500,115,44,88)+"<br>");
+    </script>
+</body>
+</html>

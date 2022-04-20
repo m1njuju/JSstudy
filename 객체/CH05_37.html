@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date 객체</title>
+</head>
+<body>
+    <p> a UTC string (date display standard).</p>
+    <p>Simple display...</p>
+    <p>Example of Get Method</p>
+    <p>Example of Set Method</p>
+    <p>Date.parse() returns the number of milliseconds or strings</p>
+    <p>---대여 기간의 경과일 산정---</p>
+    <script>
+        let toDay = new Date();
+        let miliDay = new Date(100000000000);
+        let stringDay = new Date("June 6, 2018 09:00:00");
+        let numberDay = new Date(2018,6,6,0,0,0);
+        document.write("Date()는 오늘 날짜 : "+toDay+"<br>");
+        document.write("밀리 초로 주어진 값의 날짜 : "+miliDay+"<br>");
+        document.write("문자열로 주어진 값의 날짜 : "+stringDay+"<br>");
+        document.write("연월일이 숫자로 주어진 날짜 : "+numberDay+"<br>");
+        //toUTCString()메서드: 날짜를 UTC 문자열(표준 날짜 표시)로 변환
+        document.write("오늘 날짜를 UTC 날짜로 출력 : "+toDay.toUTCString());
+        //toDateString()메서드: 불필요한 값은 생략
+        document.write("<br>오늘 날짜를 읽기 쉽게 표현 : "+toDay.toDateString());
+        //get 메서드
+        document.write("<br>getTime()메서드 : "+toDay.getTime()+"<br>");
+        document.write("getDate()메서드 : "+toDay.getDate()+"<br>");
+        document.write("getDay()메서드 : "+toDay.getDay()+"<br>");
+        document.write("getFullYear()메서드 : "+toDay.getFullYear()+"<br>");
+        document.write("getHours()메서드 : "+toDay.getHours()+"<br>");
+        document.write("getMilliseconds()메서드 : "+toDay.getMilliseconds()+"<br>");
+        document.write("getMinutes()메서드 : "+toDay.getMinutes()+"<br>");
+        document.write("getMonth()메서드 : "+toDay.getMonth()+"<br>");
+        document.write("getSeconds()메서드 : "+toDay.getSeconds()+"<br>");
+        //set 메서드
+        let thisDay = new Date();
+        thisDay.setFullYear(2018, 6, 06);
+        document.write("setFullYear() 메서드 : "+thisDay+"<br>");
+        thisDay.setDate(20);
+        document.write("setDate() 메서드 : "+thisDay+"<br>");
+        thisDay.setDate(thisDay.getDate() +50);
+        document.write("setDate() 메서드 : "+thisDay+"<br>");
+        thisDay.setHours(15);
+        document.write("setHours() 메서드 : "+thisDay+"<br>");
+        thisDay.setMilliseconds(2345);
+        document.write("setMilliseconds() 메서드 : "+thisDay+"<br>");
+        thisDay.setMinutes(34);
+        document.write("setMinutes() 메서드 : "+thisDay+"<br>");
+        thisDay.setMonth(7);
+        document.write("setMonth() 메서드 : "+thisDay+"<br>");
+        thisDay.setTime(840023400);
+        document.write("setTime() 메서드 : "+thisDay+"<br>");
+        //Date.parse()와 Date.now() 메서드
+        let millsec = Date.parse("july 13, 2015");
+        document.write(millsec+"<br>");
+        let string_Date=new Date(millsec);
+        document.write(string_Date+"<br>");
+        let cursec= Date.now("july 13,2017");
+        document.write(cursec+"<br>");
+        //Date 객체의 비교 연산
+        let today, someday, text;
+        today=new Date();
+        someday=new Date();
+        someday.setFullYear(2017, 0, 14);
+        if(someday> today) {
+            text = "Today is before January 14, 2017.";
+        }
+        else {
+            text = "Today is after January 14, 2017.";
+            let diff = today.getTime() - someday.getTime();
+            let del_Day = diff/(1000*24*60*60);
+            document.write(text+"<br>"+del_Day);
+        }
+    </script>
+</body>
+</html>

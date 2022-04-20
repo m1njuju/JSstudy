@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장함수</title>
+</head>
+<body>
+    <script>
+        //escape(매개변수):문자를 인코딩 ->ISO-Latin-1문자를 16진수 아스키코드로
+        //unescape(매개변수):문자를 디코딩 -> 아스키코드값을 ISO-Latin-1문자로
+        let str01="자바스크립트";
+        let str02="JavaScript";
+        let num01=123456;
+        encode_str01=escape(str01);
+        encode_str02=escape(str02);
+        encode_num01=escape(num01);
+        document.write("자바스크립트 인코딩: "+encode_str01+"<br>");
+        document.write("JavaScript 인코딩: "+encode_str02+"<br>");
+        document.write("123456 인코딩: "+encode_num01+"<br>");
+        decode_str01=unescape(str01);
+        decode_str02=unescape(str02);
+        decode_num01=unescape(num01);
+        document.write("자바스크립트 디코딩: "+decode_str01+"<br>");
+        document.write("JavaScript 디코딩: "+decode_str02+"<br>");
+        document.write("123456 디코딩: "+decode_num01+"<br>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function add() {
+            let sum;
+            let x=100; let y=200;
+            sum=x+y;
+            document.write("두 수의 합은 "+sum+"<br>");
+            return; //sum; // return값이 없으면 함수에 어떠한 값도 반환되지 않음
+            //return값이 없을 경우 결과값은 undefined
+        };
+    </script>
+</head>
+<body>
+    <p id="demo2"></p>
+    <script>
+        document.write("함수 add()가 반환한 값"+add());
+        //return문에 변수가 없는 경우 반환할 값이 지정되지 않았으므로 undefined
+
+        //함수의 인수와 매개변수
+        function findMax() {
+            let i;
+            let max = -Infinity;
+            for (i=0; i<arguments.length; i++) {
+                if(arguments[i] > max){
+                    max = arguments[i];
+                }
+            }
+            return max;
+        }
+        function sumAll() {
+            let i, sum = 0;
+            for (i=0; i<arguments.length; i++) {
+                sum += arguments[i];
+            }
+        }
+    </script>
+
+</body>
+</html>

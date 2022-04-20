@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //가변 인자 함수
+        //매개변수 기본 원칙
+        function print(x,y) {
+            document.write(x+"가 "+y+"개 있습니다<br>");
+        }
+        //함수 이름은 같으나 매개변수가 여러 가지인 경우
+        function print(x) {
+            document.write(x+"를 판매한다<br>");
+        }
+        function print(a,b,c,d) {//가장 많은 매개변수를 가지고 있어 호출됨
+            document.write(a+"가 "+b+"개 있으며, 단가는 "+c+"원이며 "+d+"되었다<br>");
+        }
+    </script>
+</head>
+<body>
+    <script>
+        print('사과',10);
+        print('사과');// y에는 값이 할당되지 않았다 undefined
+        print('사과','수천',500,'완판');//인수가 매개변수보다 많음 초과된 인수 무시
+    </script>
+</body>
+</html>

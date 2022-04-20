@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정규식(RegExp 객체)의 표현</title>
+</head>
+<body>
+    <p id="str">Search a string, and display the position of the match:</p>
+    <button onclick="myFunction()">Try it</button>
+    <p id="demo2"></p><br>
+
+    <p id="p01">The best things in life are free...!</p>
+    <button onclick="myFunction2()">Try it</button>
+    <p id="demo3"></p>
+
+    <!--HTML5 제약 조건 검증-->
+    <p>Enter a number and click OK:</p>
+    <input id="id1" type="number" min="100" max="300" required>
+    <button onclick="myFunction3()">OK</button>
+    <p id="demo4"></p>
+
+    <input id="id2" type="number"max="100">
+    <button onclick="myFunction4()">OK</button>
+    <p id="demo5"></p>
+    <script>
+        function myFunction3() {
+            let inpObj = document.getElementById("id1");
+            if (inpObj.checkValidity() == false) {
+                document.getElementById("demo4").innerHTML = inpObj.validationMessage;
+            }
+            else {
+                document.getElementById("demo4").innerHTML = "Input OK";
+            }
+        }
+
+        function myFunction4() {
+            let txt = "";
+            if (document.getElementById("id2").validity.rangeOverflow) {
+                txt = "Value too large";
+            }
+            else {
+                txt = "Input OK";
+            }
+            document.getElementById("demo5").innerHTML = txt;
+        }
+
+        //RegExp 객체 메서드
+        function myFunction() {
+            let target = document.getElementById("str").innerHTML;
+            let n = target.search(/string/i);
+            //document.getElementById("demo2").innerHTML = n;
+            let txt = target.replace(/string/i, "HTML5");
+            document.getElementById("demo2").innerHTML = txt;
+        }
+
+        function myFunction2() {
+            text = document.getElementById("p01").innerHTML;
+            //document.getElementById("demo3").innerHTML = /life/.test(text);
+            document.getElementById("demo3").innerHTML = /life/.exec(text);
+        }
+
+        function checkEmpty() {
+            let x;
+            let exp = /^\d{4}\/\d{1,2}\/\d{1,2}/;
+            let val = document.getElementById("check").value;
+            if(val.match(exp)) {
+                x = "OK!";
+            }
+            else {
+                x="오류!"
+            }
+            document.getElementById("demo").innerHTML = x;
+        }
+    </script>
+    <form>
+        name : <input type="text" id="check">
+        <input type="button" onclick="checkEmpty()" value="유효성검사">
+    </form>
+    <p id="demo"></p>
+</body>
+</html>

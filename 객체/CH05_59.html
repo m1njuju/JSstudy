@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로토타입</title>
+</head>
+<body>
+    <h2> Add of Properties in prototypes...</h2>
+    <h2> Using prototypes...</h2>
+    <script>
+        function Car(m,s,c) {
+            this.model = m;
+            this.speed = s;
+            this.color = c;
+            /*this.speedUp = function () {
+                this.speed += 10;
+                return this.speed;
+            };*/
+        }
+        Car.prototype.battery = false;
+        Car.prototype.speedUp = function() {
+            this.speed +=20;
+            return this.speed;
+        }
+        Car.prototype.speedDown = function() {
+            this.speed -= 10;
+            return this.speed;
+        }
+        let myCar = new Car("BMW",100,"Black");
+        let yourCar = new Car("Benz",90,"White");
+        let hisCar = new Car("HyunDae",110,"Gray");
+        Car.battery = true;
+        /*Car.speedUp = function() {
+            this.speed +=20;
+            return this.speed;
+        };*/
+        //document.write("<b>Speed of myCar: </b>"+myCar.speedUp()+"<br>");
+        myCar.model = "HyunDae";
+        //document.write("<b>Model of myCar: </b>"+myCar.model+"<br>");
+        //document.write("<b>Battery of myCar: </b>"+myCar.battery+"<br>")
+        //document.write("<b>Speed of myCar: </b>"+myCar.speedUp()+"<br><br>");
+        //document.write("<b>yourCar.speedUp() : </b>"+yourCar.speedUp()+"<br><br>");
+
+        document.write("<b>myCar.battery : </b>"+myCar.battery+"<br>")
+        document.write("<b>myCar.speedUp() : </b>"+myCar.speedUp()+"<br>");
+        document.write("<b>yourCar.speedDown(): </b>"+yourCar.speedDown()+"<br>");
+    </script>
+</body>
+</html>

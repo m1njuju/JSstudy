@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //반복문
+        for(let i=0; i<=10; i++) {
+            document.write("Hello Javascript World<br>");
+        }
+
+        //for문
+        for(let i=1; i<=5; i++) {
+            document.write("당신은 우리집을 "+i+"번 방문하였습니다<br>");
+        }
+        //초기 값 부여
+        let fruits=["apple","mango","Orange","Lemon","Pear"];
+        for (let i=0; i<fruits.length; i++) {
+            document.write(fruits[i]+"<br>");
+        }
+        //증감식
+        for(let i=0; i<fruits.length; i=i+2) {
+            document.write(fruits[i]+"<br>");
+        }
+        //중첩된 for문
+        let sum;
+        for(let i=1; i<=3; i++) {
+            for(let j=1; j<=3; j++) {
+                sum = i * j;
+                document.write(i+"*"+j+"="+sum+"<br>");
+            }
+        }
+        //for in 문
+        let array01=["사과","배","포도","딸기","레몬"];
+        for (let i in array01) {
+            document.write(array01[i]+"<br>");
+        }
+
+        //while문
+        /*while(true) {// 조건식의 변화를 주지 않아 프로그램이 무한반복됨
+            document.write("무한반복<br>");
+        }*/
+        let i=0;
+        /*while(i < array01.length) {
+            document.write(`array01[${i}]= ${array01[i]}<br>`);
+            i++;
+        }*/
+        //do while문
+        do {
+            document.write(`array01[${i}]= ${array01[i]}<br>`);
+            i++;
+        } while (i < array01.length);
+
+        // break문
+        let remain =0;
+        let array=[1, 31, 57, 23, 80, 5, 4];
+        for (let i=0; i<array.length; i++) {
+            remain = array[i]%2;
+            if(remain==0) {
+                break;
+            }
+            document.write(array[i]+"<br>");
+        }
+
+        //continue문
+        for(let i=1; i<=6; i++) {
+            if(i==3) {
+                document.write("현재 반복문 내의 다음 코드를 생략<br>");
+                continue;
+            }
+            document.write("count = "+ i + "<br>");
+        }
+        for(let i=1; i<=6; i++) {
+            if(i==3) {
+                document.write("현재 반복문 내의 다음 코드를 생략<br>");
+                break;
+            }
+            document.write("count = "+ i + "<br>");
+        }
+    </script>
+</body>
+</html>

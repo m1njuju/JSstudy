@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 노드(Nodes)</title>
+</head>
+<body>
+    <h1 id="id01">My First Page</h1>
+    <p id="id02"></p>
+
+    <p>Hello World!</p>
+    <div>
+        <p>The DOM is very useful!</p>
+        <p>This example demonstrates the <b>document.body</b> property. </p>
+    </div>
+
+    <div id="div1">
+        <p id="p1">This is a paragraph.</p>
+        <p id="p2">This is another paragraph.</p>
+    </div>
+
+    <h2>JavaScript HTML DOM!</h2>
+    <p>Hello javascript...!</p>
+    <p>Good Programming Language...!</p>
+    <p id="demo"></p>
+    <script>
+        //document.getElementById("id02").innerHTML =
+          //  document.getElementById("id01").innerHTML;
+
+        //document.getElementById("id02").innerHTML =
+            //document.getElementById("id01").firstChild.nodeValue;
+
+        //document.getElementById("id02").innerHTML =
+            //document.getElementById("id01").childNodes[0].nodeValue;
+
+        //alert(document.body.innerHTML);
+        //alert(document.documentElement.innerHTML);
+
+        document.getElementById("id02").innerHTML =
+            document.getElementById("id01").nodeName;
+
+        /*let para = document.createElement("p");
+        let node = document.createTextNode("This is new.");
+        para.appendChild(node);
+        let element = document.getElementById("div1");
+        //element.appendChild(para);
+        let child = document.getElementById("p2");
+        //element.insertBefore(para,child);
+
+        para = document.getElementById("div1");
+        node = document.getElementById("p1");
+        para.removeChild(node);*/
+
+        let parent = document.getElementById("div1");
+        let child = document.getElementById("p1");
+        let para = document.createElement("p");
+        let node = document.createTextNode("This is new.");
+        para.appendChild(node);
+        parent.replaceChild(para,child);
+
+        //The HTMLCollection 객체
+        let myNodelist = document.getElementsByTagName("p");
+        document.getElementById("demo").innerHTML = myNodelist[7].innerHTML;
+    </script>
+</body>
+</html>

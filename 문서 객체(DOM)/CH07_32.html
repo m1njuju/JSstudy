@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- onchange는 포커스를 잃을 때 이벤트 발생 -->
+    Enter your name: <input type="text" id="fname" onchange="myFunction()">
+    <p>transforms the input text to upper case.</p>
+
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" 
+    style = "background-color:#D94A38; width:120px; height: 20px; padding:40px;">
+        First Display...
+    </div><br>
+
+    <div onmousedown="mDown(this)" onmouseup="mUp(this)"
+    style = "background-color:#D94A38; width:90px; height: 20px; padding:40px;">Click Me</div>
+
+    Enter your name: <input type="text" id="fname1"
+    onfocus="focusFunction()" onblur="blurFunction()"><br>
+
+    Enter your name: <input type="text" id="fname2"><br>
+
+    Enter your name: <input type="text" id="fname3">
+
+    <p>This example of the addEventListener() with click event to a button.</p>
+    <button id="myBtn">Try it</button><br><br>
+
+    <button id="myBtn2">Try it</button>
+    <p id="demo"></p>
+    <script>
+        function myFunction() {
+            let x = document.getElementById("fname");
+            x.value = x.value.toUpperCase();
+        }
+
+        function mOver(obj) {
+            obj.innerHTML = "Thank You";
+        }
+        function mOut(obj) {
+            obj.innerHTML = "Mouse Over Me";
+        }
+
+        function mDown(obj) {
+            obj.style.backgroundColor = "#1ec5e5";
+            obj.innerHTML = "Release Me";
+        }
+        function mUp(obj) {
+            obj.style.backgroundColor = "#D94A38";
+            obj.innerHTML = "Thank You";
+        }
+
+        function focusFunction() {
+            document.getElementById("fname1").style.backgroundColor = "red";
+        }
+        function blurFunction() {
+            document.getElementById("fname1").style.backgroundColor = "yellow";
+        }
+
+        document.getElementById("fname2").onfocus = function myFunction2() {
+            document.getElementById("fname2").style.backgroundColor = "red";
+        }
+
+        document.getElementById("fname3").addEventListener("focus",myFunction3);
+        function myFunction3() {
+            document.getElementById("fname3").style.backgroundColor = "red";
+        }
+
+        document.getElementById("myBtn").addEventListener("click",function() {
+            alert("Hello World!");
+        })
+        document.getElementById("myBtn").addEventListener("click",myFunction4);
+        function myFunction4() {
+            alert("Hello World!");
+        }
+
+        let p1 = 5;
+        let p2 = 7;
+        document.getElementById("myBtn2").addEventListener("click", myFunction5(p1,p2));
+        function myFunction5(a,b) {
+            let result = a*b;
+            document.getElementById("demo").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

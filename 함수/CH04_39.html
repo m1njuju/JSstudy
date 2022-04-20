@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장함수</title>
+</head>
+<body>
+    <h2> isFinite() 함수 </h2>
+    <script>
+        //isFinite() : 주어진 값이 유리수인지 판단
+        let str01="1234e5";
+        let str02=123456;
+        document.write(isFinite(str01)+"<br>");
+        document.write(isFinite(str02));
+
+        //isNaN() : 주어진 값이 숫자인지 아닌지 판단
+        let str1="1234e5";
+        document.write("<br>"+isNaN(str1));
+
+        //String():숫자를 문자열로 변환
+        //Number():문자열을 숫자로 변환
+        let num01=12;
+        let num02=34;
+        document.write("<br>"+String(num01)+String(num02)+"<br>");
+        document.write(Number(num01)+Number(num02));
+    </script>
+</body>
+</html>

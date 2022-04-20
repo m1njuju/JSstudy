@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로토타입 링크</title>
+</head>
+<body>
+    <h3> the Method of prototypical Exp</h3>
+    <script>
+        //classical 방식
+        function Car(m) { this.model = m || "Benz"; }
+        Car.prototype.getModel = function () {
+            return this.model;
+        }
+        function childCar(model) {this.model =model;}
+        childCar.prototype = new Car();
+        let myCar = new childCar("BMW");
+        document.write(myCar.getModel());
+
+        //prototypical 방식(Object 객체)
+        let parentCar = {
+            model : "BMW",
+            speed : 100,
+            color : "Black",
+            speedUp : function() {
+                this.speed +=10;
+                return this.speed;
+            },
+            speedDown : function() {
+                this.speed -=10;
+                return this.speed;
+            }
+        };
+        let first_childCar = Object.create(parentCar);
+            first_childCar.battery = false;
+        let second_childCar = Object.create(parentCar);
+            second_childCar.model = "Benz";
+        document.write("<br><b>first.model : </b>"+first_childCar.model+"<br>");
+        document.write("<b>first.speedUp : </b>"+first_childCar.speedUp()+"<br>");
+        document.write("<b>second.model : </b>"+second_childCar.model+"<br>");
+        document.write("<b>second.speedDown : </b>"+second_childCar.speedDown()+"<br>");
+    </script>
+</body>
+</html>

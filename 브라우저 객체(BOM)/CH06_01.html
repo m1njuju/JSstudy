@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window 객체</title>
+</head>
+<body>
+    <p>*** Create a Window and display name of window ***</p>
+    <p>*** Create a Window and display the coordinates of window ***</p>
+    <button onclick="myFunction()">Try it</button>
+    <iframe src="https://www.w3cschools.com"></iframe>
+    <iframe src="https://www.daum.net"></iframe>
+    <script>
+        //window size
+        let w = window.innerWidth // 현재 브라우저 창의 너비
+        let h = window.innerHeight // 현재 브라우저 창의 높이
+        document.write("<br><b>innerWidth : </b>"+w+"<b> innerHeight : </b>"+h+"<br>");
+
+        //window name
+        let myWindow = window.open("","MsgWindow","width=200,height=100");
+        myWindow.document.write("<P>This window's name is: "+myWindow.name+"</p>");
+
+        //screen
+        myWindow = window.open("","myWindow");
+        myWindow.document.write("This is new window : 'myWindow'"+"<br>");
+        myWindow.document.write("ScreenLeft : "+myWindow.screenLeft+"<br>");
+        myWindow.document.write("ScreenTop : "+myWindow.screenTop+"<br>");
+
+        //top,self
+        if(window.top != window.self) {
+            document.write("This window is not the topmost window!");
+        }
+        else {
+            document.write("This window is the topmost window!");
+        }
+
+        //frames,length
+        function myFunction() {
+            window.frames[1].location = "https://www.google.com";
+        }
+        document.write("<br><b>window.length : </b>"+window.length);
+    </script>
+</body>
+</html>

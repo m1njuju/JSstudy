@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //함수를 변수로 활용하는 경우
+        let view = function add(x,y) {
+            let sum=x+y;
+            return sum;
+        };
+    </script>
+</head>
+<body>
+    <script>
+        let result = view(100,200);
+        document.write("함수 add()가 반환한 값: "+result);
+        //함수 표현식의 고려사항
+        helloWorld_01();
+        function helloWorld_01() {
+            alert("HelloWorld_01... JavaScript World...!");
+        }
+        //HelloWorld_02();//함수표현식은 호출 이전에 코딩되어야 함
+        let HelloWorld_02=function() {
+            alert("HelloWorld_02... JavaScript World...!");
+        };
+        HelloWorld_02();
+
+        //람다(Lamda)함수
+        //다른 위치에서 호출할 수 없고, 순서에 따라 실행됨
+        (function(){
+            alert("HelloWorld_01... JavaScript World...!");
+        })();
+    </script>
+</body>
+</html>

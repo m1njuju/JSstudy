@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math 객체</title>
+</head>
+<body>
+    <h2>JavaScript Math.PI</h2>
+    <h2>JavaScript Math Constants</h2>
+    <h2>JavaScript Math methods</h2>
+    <script>
+        document.write(Math.PI);
+        //Math 객체의 상수
+        document.write("<br><b>Math.E : </b>"+Math.E + "<br>"+
+        "<b>Math.PI : </b>"+Math.PI + "<br>"+"<b>Math.SQRT2 : </b>"+Math.SQRT2 + "<br>"+
+        "<b>Math.SQRT1_2 : </b>"+Math.SQRT1_2 + "<br>"+
+        "<b>Math.LN2 : </b>"+Math.LN2 + "<br>"+"<b>Math.LN10 : </b>"+Math.LN10 + "<br>"+
+        "<b>Math.LOG2E : </b>"+Math.LOG2E + "<br>"+"<b>Math.LOG10E : </b>"+Math.LOG10E + "<br>");
+        //Math 객체의 메서드
+        let a=Math.round(4.7);
+        let b=Math.round(4.4);
+        let c=Math.pow(8,2);
+        let d=Math.sqrt(65);
+        let e=Math.abs(-4.7);
+        let f=Math.ceil(4.7);
+        let g=Math.floor(4.7);
+        let h=Math.sin(90*Math.PI/180);
+        let i=Math.cos(0*Math.PI/180);
+        let j=Math.max(3,124,-8,99,-17);
+        let k=Math.min(3,124,-8,99,-17);
+        let l=Math.random();
+        document.write("<br><b>Math.round(4.7) : </b>"+a+"<br>"+"<b>Math.round(4.4) : </b>"+b+"<br>"+
+        "<b>Math.pow(8,2) : </b>"+c+"<br>"+"<b>Math.sqrt(65) : </b>"+d+"<br>"+
+        "<b>Math.abs(-4.7) : </b>"+e+"<br>"+"<b>Math.ceil(4.7) : </b>"+f+"<br>"+
+        "<b>Math.floor(4.7) : </b>"+g+"<br>"+"<b>Math.sin(90*Math.PI/180); : </b>"+h+"<br>"+
+        "<b>Math.cos(0*Math.PI/180) : </b>"+i+"<br>"+
+        "<b>Math.max(3,124,-8,99,-17) : </b>"+j+"<br>"+
+        "<b>Math.min(3,124,-8,99,-17) : </b>"+k+"<br>"+"<b>Math.random() : </b>"+l+"<br>");
+    </script>
+</body>
+</html>

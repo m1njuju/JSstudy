@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유효성검증</title>
+    <script>
+        //공백 검증
+        function validateForm() {
+            let x = document.forms["myForm"]["fname"].value;
+            if (x=="") {
+                alert("Name must be filled out");
+                return false;
+            }
+        }
+
+        function checkEmpty() {
+            let cont = document.getElementById("check");
+            if(cont.value.length ==0) {
+                alert("기본 입력 필드입니다!");
+            }
+        }
+
+        //데이터 길이 검증
+        function checkEmpty2(min,max) {
+            let cont = document.getElementById('check2');
+            if(cont.value.length <= min || cont.value.length >= max) {
+                document.getElementById("demo").innerHTML = "기본 자릿수를 벗어났습니다!"
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="myForm">
+        Name: <input type="text" name="fname">
+        <input type="submit" onclick="validateForm()" value="Submit">
+    </form>
+
+    <form>
+        name : <input type="text" id="check">
+        <input type="button" onclick="checkEmpty()" value="공백 확인">
+    </form>
+
+    <!-- form 유효성 자동 검증 -->
+    <form method="post">
+        <input type="text" name="fname" required>
+        <input type="submit" value="Submit">
+    </form><br>
+
+    <form>
+        name : <input type="text" id="check2">
+        <input type="button" onclick="checkEmpty2(6,15)" value="id 자릿수 확인">
+    </form>
+    <p id="demo"></p><br>
+
+    <h2>JavaScript Can Validate Input</h2>
+    <p>Please input a number between 1 and 10:</p>
+    <input id="numb">
+    <button type="button" onclick="myFunction()">Submit</button>
+    <p id="demo2"></p>
+    <script>
+        function myFunction() {
+            let x, text;
+            x = document.getElementById("numb").value;
+            if (isNaN(x) || x < 1 || x > 10) {
+                text = "Input not valid";
+            }
+            else {
+                text = "Input OK";
+            }
+            document.getElementById("demo2").innerHTML = text;
+        }
+    </script>
+</body>
+</html>

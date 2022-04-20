@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Array에서 Math.max()와 Math.min() 사용하기-->
+    <h2>Array Sort_(Max, Min)</h2>
+    <p>The highest number is <span id="demo1"></span>.</p>
+    <p>The lowest number is <span id="demo2"></span>.</p>
+    <p>리터럴 배열에서 최대값은 <span id="demo3"></span>.</p>
+    <p>리터럴 배열에서 최소값은 <span id="demo4"></span>.</p>
+    <script>
+        document.getElementById("demo1").innerHTML = myArrayMax();
+        function myArrayMax() {
+            return Math.max.apply(null,[40,100,1,5,25,10]);
+        }
+        let points=[40,100,1,5,25,10];
+        document.getElementById("demo2").innerHTML = myArrayMin(points);
+        function myArrayMin(arr) {
+            return Math.min.apply(null, arr);
+        }
+        document.getElementById("demo3").innerHTML = Math.max(40,100,1,5,25,10);
+        document.getElementById("demo4").innerHTML = Math.min(40,100,1,5,25,10);
+    </script>
+</body>
+</html>

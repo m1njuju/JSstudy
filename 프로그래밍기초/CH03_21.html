@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function inputFun() {
+            let x = document.getElementById("input_id").value;
+            document.getElementById("output_id").value = x;
+        }
+
+        function Calc() {
+            let x= Number(document.calculator.number1.value);
+            let y= Number(document.calculator.number2.value);
+            let result_Add = x+y;
+            document.calculator.result.value=result_Add;
+        }
+    </script>
+</head>
+<body>
+    입력: <input type="text" id="input_id" size="10">
+    결과: <input type="text" id="output_id" size="10">
+    <button onclick="inputFun()"> 클릭 </button><br>
+
+    <form name="calculator">
+        입력1: <input type="text" name="number1" size="10">
+        입력2: <input type="text" name="number2" size="10">
+        결과: <input type="text" name="result">
+    </form>
+    <button onclick="Calc()"> ADD </button>
+
+    <script>
+        let father = prompt("숫자를 입력하시오","아버지 나이를 입력하시오");
+        ageFather = parseInt(father);
+        let mother = prompt("숫자를 입력하시오","어머니 나이를 입력하시오");
+        ageMother = parseInt(mother);
+        let brother = prompt("숫자를 입력하시오","형의 나이를 입력하시오");
+        ageBrother = parseInt(brother);
+        let me = prompt("숫자를 입력하시오","나의 나이를 입력하시오");
+        ageMe = parseInt(me);
+        ageFamily = ageFather + ageMother + ageBrother + ageMe;
+        document.write(ageFamily);
+    </script>
+</body>
+</html>

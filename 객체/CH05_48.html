@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number객체</title>
+</head>
+<body>
+    <h2> Properties of Number Object</h2>
+    <h2> Presentations of Literal values</h2>
+    <h2> The JavaScript Method</h2>
+    <h2> The JavaScript Global Method</h2>
+    <script>
+        let x =6;
+        document.write("x.MAX_VALUE : "+x.MAX_VALUE+"<br>");
+        document.write("Number.MAX_VALUE : "+Number.MAX_VALUE+"<br>");
+        document.write("Number.MIN_VALUE : "+Number.MIN_VALUE+"<br>");
+        document.write("Number.NEGATIVE_INFINITY : "+Number.NEGATIVE_INFINITY+"<br>");
+        document.write("Number.POSETIVE_INFINITY : "+Number.POSETIVE_INFINITY+"<br>");
+
+        //리터럴 값의 Number 객체 표현
+        let num01 = Number(1234.567);
+        let num02 = Number("1234.567");
+        let num03 = Number(" ");
+        let num04 = Number("0x1234.567");
+        document.write('<br><b>Number(1234.567) : </b> '+num01+"<br>"+
+        '<b>Number("1234.567") : </b> '+num02+"<br>"+'<b>Number(" ") : </b> '+num03+"<br>"+
+        '<b>Number("0x1234.567") : </b> '+num04+"<br>");
+
+        //Number 객체의 메서드
+        x = 123.456;
+        document.write("<br><b>x.toString() : "+ x.toString()+"<br>"+
+            "<b>(123.456).toString() : "+ (123.456).toString()+"<br>"+
+            "<b>(123+0.456).toString() : "+ (123+0.456).toString()+"<br>");
+        document.write("<b>x.toExponential() : "+ x.toExponential()+"<br>"+
+            "<b>x.toExponential(2) : "+ x.toExponential(2)+"<br>");
+        document.write("<b>x.toFixed(0) : "+ x.toFixed(0)+"<br>"+
+            "<b>x.toFixed(4) : "+ x.toFixed(4)+"<br>");
+        document.write("<b>x.toPrecision() : "+ x.toPrecision()+"<br>"+
+            "<b>x.toPrecision(5) : "+ x.toPrecision(5)+"<br>");
+        document.write("<b>x.valueOf() : "+ x.valueOf()+"<br>"+
+            "<b>(123.456).valueOf() : "+ (123.456).valueOf()+"<br>"+
+            "<b>(123+0.456).valueOf() : "+ (123+0.456).valueOf()+"<br>");
+
+        //형 변환 메서드
+        document.write("<br><b>Number(true) : </b>"+Number(true)+"<br>"+
+            "<b>Number(false) : </b>"+Number(false)+"<br>"+
+            "<b>Number(new Date()) : </b>"+Number(new Date())+"<br>"+
+            "<b>Number(' 123') : </b>"+Number(" 123")+"<br>"+
+            "<b>Number('123 ') : </b>"+Number("123 ")+"<br>"+
+            "<b>Number('12 3') : </b>"+Number("12 3")+"<br>");
+        document.write("<b>parseInt('12') : </b>"+parseInt("12")+"<br>"+
+        "<b>parseInt('12.34') : </b>"+parseInt("12.34")+"<br>"+
+        "<b>parseInt('12 3') : </b>"+parseInt("12 3")+"<br>"+
+        "<b>parseInt('2017 years') : </b>"+parseInt("2017 years")+"<br>"+
+        "<b>parseInt('years 2017') : </b>"+parseInt("years 2017")+"<br>");
+        document.write("<b>parseFloat('12') : </b>"+parseFloat("12")+"<br>"+
+        "<b>parseFloat('12.34') : </b>"+parseFloat("12.34")+"<br>"+
+        "<b>parseFloat('12 3') : </b>"+parseFloat("12 3")+"<br>"+
+        "<b>parseFloat('2017 years') : </b>"+parseFloat("2017 years")+"<br>"+
+        "<b>parseFloat('years 2017') : </b>"+parseFloat("years 2017")+"<br>");
+    </script>
+</body>
+</html>

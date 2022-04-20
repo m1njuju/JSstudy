@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--배열 요소가 객체인 경우의 sort-->
+    <h2>JavaScript Array Sort</h2>
+    <p>Click the buttons to sort car objects on age.</p>
+    <button onclick="myFunction()">Sort</button>
+    <p id="demo"></p>
+    <script>
+        let cars= [
+            {type:"Volvo", year:2016},
+            {type:"Saab", year:2001},
+            {type:"BMW", year:2010}
+        ]
+        displayCars();
+        function myFunction() {
+            cars.sort(function(a,b){return a.year - b.year});
+            displayCars();
+        }
+        function displayCars() {
+            document.getElementById("demo").innerHTML=
+            cars[0].type +" "+cars[0].year +"<br>"+
+            cars[1].type +" "+cars[1].year +"<br>"+
+            cars[2].type +" "+cars[2].year +"<br>";
+        }
+
+        //reverse() 메서드: 내림차순 정렬
+        let fruits=["Orange","Pear","Apple","Banana"];
+        let sort_fruits=fruits.sort();
+        document.write(sort_fruits+"<br>");
+        document.write(fruits+"<br>");
+        let reverse_Furits=fruits.reverse();
+        document.write(reverse_Furits+"<br>");
+        document.write(fruits);
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Create New BUTTON element with text.</p>
+    <button onclick="myFunction()">Try it</button><br>
+
+    <p> create a P element with some text, and append it to DIV.</p>
+    <div id="myDIV">
+        First statement...
+    </div>
+    <button onclick="myFunction2()">Try it</button>
+
+    <ul id="myList">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+    <p>Remove the first item from the list.</p>
+    <button onclick="myFunction3()">Try it</button>
+
+    <ul>
+        <li>Coffee</li>
+        <li id="myLI">Tea</li>
+        <li>Milk</li>
+    </ul>
+    <p>Remove the li element with id="myLI" from the list.</p>
+    <button onclick="myFunction4()">Try it</button>
+
+    <ul id="myList2">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+    <p>Append an item to the end of the list.</p>
+    <button onclick="appendFunction()">Try it</button><br>
+    <button onclick="replaceFunction()">Try it</button><br>
+    <button onclick="replaceFunction2()">Try it</button>
+    <script>
+        function myFunction() {
+            let btn = document.createElement("BUTTON");
+            let t = document.createTextNode("CLICK ME");
+            btn.appendChild(t);
+            document.body.appendChild(btn);
+        }
+
+        function myFunction2() {
+            let para = document.createElement("p");
+            let t = document.createTextNode("Added Statements......");
+            para.appendChild(t);
+            document.getElementById("myDIV").appendChild(para);
+        }
+
+        function myFunction3() {
+            let list = document.getElementById("myList");
+            let x = list.removeChild(list.childNodes[0]);
+        }
+
+        function myFunction4() {
+            let item = document.getElementById("myLI");
+            item.parentNode.removeChild(item);
+        }
+
+        function appendFunction() {
+            let node = document.createElement("li");
+            let textnode = document.createTextNode("Water");
+            node.appendChild(textnode);
+            document.getElementById("myList2").appendChild(node);
+        }
+
+        function replaceFunction() {
+            let textnode = document.createTextNode("Water");
+            let item = document.getElementById("myList2").children[0];
+            item.replaceChildren(textnode);
+        }
+
+        function replaceFunction2() {
+            let elmnt = document.createElement("li");
+            let textnode = document.createTextNode("Water");
+            elmnt.appendChild(textnode);
+            let item = document.getElementById("myList2").children[0];
+            item.replaceChildren(elmnt);
+        }
+    </script>
+</body>
+</html>

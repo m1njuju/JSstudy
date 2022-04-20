@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str01= "first line \n second line \n";// \n : 다음 줄로 이동
+        let str02= 'first statement \t second statement'; // \t : 탭키만큼 이동
+        let str03= 'first statement \b second statement';// \b : 앞으로 한칸 이동
+        let str04= "c\\javascript"; // \\ : \표시
+        console.log(str01+'\n'+str02);
+        console.log(str02);
+        console.log(str03);
+        console.log(str04);
+
+        //자료형 : 부울형
+        // 부울형 자료형은 주로 조건문에서 실행 조건을 제어하기 위해 사용
+        let boolean01= true;
+        let boolean02= false;
+        let boolean03= 12;
+        let boolean04= 0;
+        let boolean05= NaN;
+        let boolean06= "abc";
+        let boolean07= "";
+        let boolean08= null;
+        let boolean09 ;
+        document.write("<br>"+boolean01 + " " + boolean02+ "<br>");
+        document.write(!!boolean03 + " " + !!boolean04+ "<br>");
+        document.write(!!boolean05 + " " + !!boolean06+ "<br>");
+        document.write(!!boolean07 + " " + !!boolean08+ "<br>");
+        document.write(!!boolean09);
+    </script>
+</body>
+</html>

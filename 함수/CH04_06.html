@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled Document</title>
+    <script>
+        //사용자 정의 함수
+        //명시적(선언적)함수
+        function helloWorld_01() {
+            alert("HelloWorld_01... JavaScript World...!");
+        }
+        //함수표현식(무명함수)
+        let HelloWorld_02=function() {
+            alert("HelloWorld_02... JavaScript World...!");
+        };
+    </script>
+</head>
+<body>
+    <script>
+        let view = helloWorld_01;//변수에 함수의 이름을 할당
+        view();
+
+        HelloWorld_02();
+
+    </script>
+</body>
+</html>

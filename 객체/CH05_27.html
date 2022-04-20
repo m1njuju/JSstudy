@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Array MEthods_Deleteing elements</h2>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <script>
+        let fruits = ["Banana","Orange","Apple","Mango"];
+        document.getElementById("demo1").innerHTML = "두번째 요소 값: "+fruits[1]+"<br>";
+        delete fruits[1];
+        document.getElementById("demo2").innerHTML = "두번째 요소 값: "+fruits[1]+"<br>";
+
+        //String 객체
+        //length
+        let str01 = "Mozilla";
+        let empty = '';
+        let empty_plus = "  ";
+        document.write("Mozilla의 문자열 길이: "+str01.length+"<br>");
+        document.write("빈 문자열 길이: "+empty.length+"<br>");
+        document.write("두 개의 공백 문자의 길이: "+empty_plus.length+"<br>");
+    </script>
+</body>
+</html>

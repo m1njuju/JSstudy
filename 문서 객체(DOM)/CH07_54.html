@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    <p>Hello World!</p>
+    <p>How many paragraphs in this document?</p>
+    <p>This example demonstrates the length property of a nodelist.</p>
+    <p id="demo"></p>
+
+    <h2>JavaScript HTML DOM!</h2>
+        <p>Hello World!</p>
+        <p>Hello Norway!</p>
+        <p>Good javaScript...!</p>
+        <p id="demo2"></p>
+        <button onclick="myFunction()">Try it</button><br>
+
+    <h2>JavaScript HTML DOM!</h2>
+    <p>Hello javascript...!</p>
+    <p>Good Programming Language...!</p>
+    <button onclick="myFunction2()">Try it</button>
+    <p id="demo01"></p>
+
+    <h3>A demonstration of how to access a FORM element</h3>
+    <form id="myForm" name="mypage">
+        First name: <input type="text" name="fname" value="Donald"><br>
+        Last name: <input type="text" name="lname" value="Duck"><br>
+    </form>
+    <p>To get name of above form.</p>
+    <button onclick="myFunction3()">Try it</button>
+    <p id="demo"></p>-->
+
+    <h3>Create a FORM and an INPUT element.</h3>
+    <button onclick="myFunction4()">Try it</button>
+    <script>
+        /*let myNodelist = document.getElementsByTagName("p");
+        document.getElementById("demo").innerHTML = myNodelist.length;
+
+        function myFunction() {
+            let myNodelist = document.getElementsByTagName("p");
+            let i;
+            for (i=0; i < myNodelist.length; i++) {
+                myNodelist[i].style.color = "red";
+            }
+        }
+
+        myNodelist = document.querySelectorAll("p");
+        document.getElementById("demo").innerHTML = myNodelist[1].innerHTML;
+
+        function myFunction2() {
+            let myNodelist = document.querySelectorAll("p");
+            document.getElementById("demo01").innerHTML = myNodelist.length;
+            let i;
+            for (i =0; i < myNodelist.length; i++) {
+                myNodelist[i].style.color = "red";
+            }
+        }*/
+
+        //form 객체
+        //form 객체 액세스
+        function myFunction3() {
+            let x = document.getElementById("myForm").name;
+            document.getElementById("demo").innerHTML = x;
+        }
+
+        //form 객체 만들기
+        function myFunction4() {
+            let x = document.createElement("FORM");
+            x.setAttribute("id","myForm");
+            document.body.appendChild(x);
+            let y = document.createElement("INPUT");
+            y.setAttribute("type","text");
+            y.setAttribute("value","Donald");
+            document.getElementById("myForm").appendChild(y);
+        }
+    </script>
+</body>
+</html>

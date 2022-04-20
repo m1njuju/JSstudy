@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장함수</title>
+</head>
+<body>
+    <h2> eval() 함수의 이해 </h2>
+    <script>
+        let str01="val01=20";
+        let str02="val02=30";
+        document.write(eval(str01)+eval(str02));
+
+        //parseInt(n) : 문자를 정수로 변경
+        let numericStr_01= "12";
+        let numericStr_02= "12.34";
+        let numericStr_03= "1234$567";
+        let numericStr_04= "1.234e2";
+        let numericStr_05= "0x1234";
+        document.write("<br>결과값 "+parseInt(numericStr_01)+"<br>");
+        document.write("결과값 "+parseInt(numericStr_01,8)+"<br>");
+        document.write("결과값 "+parseInt(numericStr_02,8)+"<br>");
+        document.write("결과값 "+parseInt(numericStr_03)+"<br>");
+        document.write("결과값 "+parseInt(numericStr_04)+"<br>");
+        document.write("결과값 "+parseInt(numericStr_05)+"<br>");
+
+        //parseFloat() : 문자를 실수로 변경
+        let numericStr_06= "12";
+        let numericStr_07= "12.34";
+        let numericStr_08= "1.234e2";
+        let numericStr_09= "1.23abcd";//문자열 출력 X
+        document.write("결과값 "+parseFloat(numericStr_06)+"<br>");
+        document.write("결과값 "+parseFloat(numericStr_07)+"<br>");
+        document.write("결과값 "+parseFloat(numericStr_08)+"<br>");
+        document.write("결과값 "+parseFloat(numericStr_09)+"<br>");
+    </script>
+</body>
+</html>

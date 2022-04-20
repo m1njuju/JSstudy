@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window 메서드</title>
+</head>
+<body>
+    <button onclick="openWin()">Open "myWindow"</button>
+    <p>*** Open a window called "MsgWindow" ***</p>
+    <button onclick="myFunction()">Try it</button>
+    <script>
+        function openWin() {
+            window.open("http://www.daum.net","_blank","width=200,height=100");
+        }
+        
+        function myFunction() {
+            let myWindow = window.open("","MsgWindow","width=200,height=100");
+            myWindow.document.write("<P>This is 'MsgWindow'. I am 200px wide and 100px tall!</p>");
+        }
+    </script>
+</body>
+</html>

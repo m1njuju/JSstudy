@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        let boolean01=true;
+        document.write(boolean01 + "<br>");
+        let boolean02= 245<100;
+        document.write(boolean02);
+
+        //자료형 : null과 undefined형
+        let person01=null; // 데이터가 없음을 명시함
+        let person02; // 데이터가 있는지 여부를 모름(현재는 없음)
+        document.write("<br>"+person01+" "+person02+"<br>");
+        document.write(1+null+"<br>");
+        document.write(1+undefined+"<br>");
+        //undefined이 어떠한 자료형인지 정의되지 않았기 때문에 숫자와 연산이 불가능
+        document.write("abc"+null+" "+"abc"+undefined+"<br>");//문자와 결합하면 그대로 문자로 반영
+
+        //자료형 : 객체형
+        let myCar01= {model:"BMW", color:"gray", speed: 150};
+        document.write("<br>"+myCar01.model + "<br>");
+        document.write(myCar01.color + "<br>");
+        document.write(myCar01.speed + "<br>");
+
+        let myCar02=new Object();
+        myCar02['model']="benz"; // []안의 속성은 인덱스와 같은 역할
+        myCar02['color']="Blue";
+        myCar02['speed']=100;
+        document.write(myCar02.model + "<br>");
+        document.write(myCar02.color + "<br>");
+        document.write(myCar02.speed);
+
+        //자료형 : 배열
+        let cars = ["Saab","Volvo","BMW"];
+        document.getElementById("demo").innerHTML = cars[0];
+
+        //자료형 검사
+        let variable01="JavaScript";
+        let variable02=123;
+        let variable03=true;
+        let variable04=null;
+        let variable05=undefined;
+        let variable06=["BMW","HYUNDAE","Bents"];
+        document.write("<br>variable01 : "+typeof variable01+"<br>");
+        document.write("variable02 : "+typeof variable02+"<br>");
+        document.write("variable03 : "+typeof variable03+"<br>");
+        document.write("variable04 : "+typeof variable04+"<br>");
+        document.write("variable04 : "+typeof variable05+"<br>");
+        document.write("variable05 : "+typeof variable06);
+
+        //숫자와 문자열의 형 변환
+        document.write("<br>"+"<br>"+(123+234)+"<br>");
+        document.write(123+"234"+"<br>");
+        document.write(false+123+"<br>");
+        document.write(123+String(234)+"<br>");
+        document.write(123+Number("234")+"<br>");
+        document.write(Boolean(1)+"<br>");
+        document.write(Boolean(0));
+        
+    </script>
+</body>
+</html>

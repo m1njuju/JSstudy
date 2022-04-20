@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>error 객체</title>
+</head>
+<body>
+    <h3>JavaScript Errors</h3>
+    <script>
+        //RangeError
+        let num = 100;
+        try {
+            num.toPrecision(0);}//유효한 값의 범위를 벗어남
+        catch(err) {
+            document.write(err.name+"<br>");
+        }
+        //ReferenceError
+        let x;
+        try {
+            x=y+1;//선언되지 않은 변수 y를 사용
+        }
+        catch(err) {
+            document.write(err.name+"<br>");
+        }
+        //SyntaxError
+        x;
+        try {
+            eval("alert('Hello)");//홑따옴표가 하나 빠짐
+        }
+        catch(err) {
+            document.write(err.name+"<br>");
+        }
+        //TypeError
+        num = 1;
+        try {
+            num.toUpperCase();}//String메서드
+        catch(err) {
+            document.write(err.name+"<br>");
+        }
+    </script>
+</body>
+</html>

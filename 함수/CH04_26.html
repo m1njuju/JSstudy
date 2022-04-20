@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수의 호출</title>
+    <script>
+        //함수 안에서 외부 함수 호출하기
+        function square(x,y) {//전역함수
+            let sum;
+            sum=(x*y)/2;
+            return sum;
+        }
+        function display(a,b) {
+            document.write("2)삼각형의 면적: "+square(a,b));
+        }
+        //함수 안에서 내부 함수 호출하기
+        function area(x,y){
+            let calculate = function(a,b){
+                sum=(x*y)/2;
+                return sum;
+            }
+            let result = calculate(x,y);
+            document.write("<br>3)삼각형의 면적: "+result);
+        }
+        //재귀함수
+        function count(x) {
+            if(x==0) {
+                document.write("<br>함수 실행종료...");
+            }
+            else {
+                document.write("<br>4)함수'count'가 호출될 때의 x값: "+x);
+                count(x-1);
+            }
+        }
+        //콜백함수
+        function callBack(x){
+            for(let i=1; i<=10;i++){
+                x(i);
+            }
+        }
+        let greeting = function(i){//함수표현식
+            document.write('<br>5)Hello JavaScript World '+i+'<br>');
+        }
+    </script>
+</head>
+<body>
+    <h2>1)JavaScript Functions</h2>
+    <h2>2)함수 외부의 함수(전역함수)를 호출 </h2>
+    <h2>3)함수 내부의 함수(지역함수)를 호출</h2>
+    <h2>4)재귀함수(자신을 호출)</h2>
+    <script>
+        display(100,200);
+
+        area(100,200);
+        //document.write("3)삼각형의 면적: "+calculate(x,y));
+        //calculate함수는 area 내에 선언된 지역함수이므로 결과값 출력 안됨
+
+        count(5);
+
+        callBack(greeting);//콜백함수
+
+        function myFunction(a,b){
+            return a*b;
+        }
+        document.write("<br>"+myFunction(4,3));
+        //함수 호출에서 괄호의 사용
+        function toCelsius(f) {
+            return (5/9) * (f-32);
+        }
+        document.write("<br>"+toCelsius(77));
+        document.write("<br>"+toCelsius+"<br>");//함수 내용이 출력됨
+
+        function compare(a,b){
+            return a-b; }
+        let score = [40,10,8,90,58,19,80];
+        document.write(score.sort(compare));//compare는 콜백함수
+    </script>
+</body>
+</html>
